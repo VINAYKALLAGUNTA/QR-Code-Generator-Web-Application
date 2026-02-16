@@ -1,6 +1,6 @@
-# 🚀 QR Code Generator Service with Node.js and Express.js
+# 🚀 QR Code Generator Service with Node.js 
 
-A full-stack QR Code Generator web application built using **Node.js, Express.js, and JavaScript**.  
+A full-stack QR Code Generator web application built using **Node.js and JavaScript**.  
 This project follows RESTful API design principles and uses a layered architecture (Routes → Controller → Service).
 
 Users can enter a Product ID and Price to generate a QR code and print it separately.
@@ -23,7 +23,6 @@ Users can enter a Product ID and Price to generate a QR code and print it separa
 
 **Backend:**
 - Node.js
-- Express.js
 - QRCode npm package
 - body-parser
 - cors
