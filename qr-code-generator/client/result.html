@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Result</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #edeef1, #cbcdcd);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 350px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #qr-container img {
+            width: 220px;
+            margin-bottom: 25px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+
+        .print-btn {
+            background-color: #4e73df;
+            color: white;
+        }
+
+        .print-btn:hover {
+            background-color: #2e59d9;
+        }
+
+        .back-btn {
+            background-color: #858796;
+            color: white;
+        }
+
+        .back-btn:hover {
+            background-color: #60616f;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .card {
+                box-shadow: none;
+            }
+
+            button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="card">
+        <h2> QR Code</h2>
+
+        <div id="qr-container"></div>
+
+        <button class="print-btn" onclick="printQR()">Print QR</button>
+        <button class="back-btn" onclick="goBack()">Back</button>
+    </div>
+
+    <script>
+        const qrImage = localStorage.getItem("qrImage");
+
+        if (qrImage) {
+            const img = document.createElement("img");
+            img.src = qrImage;
+            document.getElementById("qr-container").appendChild(img);
+        }
+
+        function printQR() {
+            window.print();
+        }
+
+        function goBack() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+</body>
+</html>
